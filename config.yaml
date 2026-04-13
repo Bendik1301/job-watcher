@@ -1,0 +1,33 @@
+search_url: "https://www.finn.no/job/search?extent=3947&job_duration=3951&location=1.20001.20061&location=2.20001.20003.20052&location=2.20001.20003.20046&location=2.20001.20003.22105&location=2.20001.20003.20045&occupation=0.43&occupation=0.51&occupation=0.45&occupation=0.41&occupation=0.27&occupation=0.25&occupation=0.34&occupation=0.11&occupation=0.12&occupation=0.26&occupation=0.30&occupation=0.53&published=1&sort=PUBLISHED_DESC&stored-id=85566347"
+
+include_all:
+  - "bachelor"
+
+include_any:
+  - "kommunikasjon"
+  - "rådgiver"
+  - "offentlig"
+  - "analyse"
+  - "administrasjon"
+  - "prosjekt"
+  - "koordinator"
+  - "samfunn"
+  - "strategi"
+
+education_any:
+  - "høyskole"
+  - "universitet"
+  - "bachelor"
+  - "master"
+
+exclude_any:
+  - "sykepleier"
+  - "selger"
+  - "dørsalg"
+  - "telefonsalg"
+  - "butikkmedarbeider"
+  - "lastebilsjåfør"
+  - "helsefagarbeider"
+
+max_results: 50
+request_delay_seconds: 1.0
