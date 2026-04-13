@@ -255,7 +255,7 @@ def main() -> None:
     session = requests.Session()
 
     try:
-    search_html = fetch(session, search_url)
+        search_html = fetch(session, search_url)
 except Exception as exc:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now(ZoneInfo("Europe/Oslo")).date().isoformat()
