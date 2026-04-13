@@ -251,22 +251,23 @@ def main() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    seen = load_seen(SEEN_PATH)
+     seen = load_seen(SEEN_PATH)
     session = requests.Session()
 
     try:
         search_html = fetch(session, search_url)
-except Exception as exc:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    today = datetime.now(ZoneInfo("Europe/Oslo")).date().isoformat()
-    MD_OUTPUT_PATH.write_text(
-        f"# FINN-treff for {today}\n\n"
-        f"Kunne ikke hente søkeresultater.\n\n"
-        f"Feil: {exc}\n",
-        encoding="utf-8",
-    )
-    print(str(exc))
-    raise
+    except Exception as exc:
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        today = datetime.now(ZoneInfo("Europe/Oslo")).date().isoformat()
+        MD_OUTPUT_PATH.write_text(
+            f"# FINN-treff for {today}\n\n"
+            f"Kunne ikke hente søkeresultater.\n\n"
+            f"Feil: {exc}\n",
+            encoding="utf-8",
+        )
+        print(str(exc))
+        raise
+
     candidates = extract_search_results(search_html)
 
     matches: list[MatchResult] = []
