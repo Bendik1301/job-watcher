@@ -248,7 +248,7 @@ def main() -> None:
 
     today = datetime.now(ZoneInfo("Europe/Oslo")).date().isoformat()
 
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     seen = load_seen(SEEN_PATH)
