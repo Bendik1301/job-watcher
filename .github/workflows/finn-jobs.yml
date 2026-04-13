@@ -4,38 +4,48 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "15 7 * * *"
-      timezone: "Europe/Oslo"
 
 permissions:
   contents: write
 
 jobs:
   scan:
-    runs-on: [self-hosted, macOS]
+    runs-on: self-hosted
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Show Python version
+        run: python3 --version
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Create virtual environment
+        run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run FINN scanner
-        run: python scripts/finn_job_scan.py
+        run: |
+          source .venv/bin/activate
+          python scripts/finn_job_scan.py
 
       - name: Add result to workflow summary
-        run: cat output/latest_matches.md >> "$GITHUB_STEP_SUMMARY"
+        if: always()
+        run: |
+          if [ -f output/latest_matches.md ]; then
+            cat output/latest_matches.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Ingen output-fil ble laget." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Commit updated state and output
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/seen_jobs.json output/latest_matches.md output/latest_matches.json
+          git add data/seen_jobs.json output/latest_matches.md output/latest_matches.json || true
 
           if git diff --cached --quiet; then
             echo "Ingen endringer å committe."
