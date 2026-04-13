@@ -90,6 +90,13 @@ def find_hits(text: str, terms: list[str]) -> list[str]:
 
 def fetch(session: requests.Session, url: str) -> str:
     response = session.get(url, headers=HEADERS, timeout=30)
+
+    if response.status_code == 403:
+        raise RuntimeError(
+            f"403 Forbidden fra nettstedet for URL: {url}. "
+            "Dette tyder på at kilden blokkerer runneren eller den automatiserte trafikken."
+        )
+
     response.raise_for_status()
     return response.text
 
