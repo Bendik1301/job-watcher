@@ -40,11 +40,11 @@ class MatchResult:
     title: str
     url: str
     score: int
+    tier: str
     matched_include_all: list[str]
     matched_include_any: list[str]
     matched_education_any: list[str]
     excluded_hits: list[str]
-
 
 def load_yaml(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
@@ -154,38 +154,83 @@ def evaluate_job(
     exclude_any: list[str],
 ) -> tuple[bool, MatchResult]:
     combined_text = f"{title}\n{full_text}"
+    normalized_title = normalize(title)
+    normalized_text = normalize(combined_text)
 
     matched_include_all = find_hits(combined_text, include_all)
     matched_include_any = find_hits(combined_text, include_any)
     matched_education_any = find_hits(combined_text, education_any)
     excluded_hits = find_hits(combined_text, exclude_any)
 
-    passes = True
+    title_hits = [term for term in include_any if normalize(term) in normalized_title]
+
+    score = 0
+
+    score += len(matched_include_all) * 3
+    score += len(matched_include_any) * 2
+    score += len(matched_education_any) * 3
+    score += len(title_hits) * 3
+
+    junior_terms = [
+        "junior",
+        "nyutdannet",
+        "graduate",
+        "trainee",
+        "førstekonsulent",
+        "konsulent",
+        "koordinator",
+    ]
+    if any(term in normalized_text for term in junior_terms):
+        score += 3
+
+    senior_title_terms = [
+        "senior",
+        "head of",
+        "director",
+        "chief",
+        "leder for",
+        "seniorrådgiver",
+    ]
+    if any(term in normalized_title for term in senior_title_terms):
+        score -= 6
+
+    if excluded_hits:
+        score -= len(excluded_hits) * 8
 
     if include_all and len(matched_include_all) != len(include_all):
-        passes = False
+        score -= 4
 
-    if include_any and not matched_include_any:
-        passes = False
+    role_hit_count = len(matched_include_any)
+    education_hit_count = len(matched_education_any)
 
-    if education_any and not matched_education_any:
-        passes = False
+    # Må ha noe faktisk relevans
+    passes = role_hit_count > 0
 
+    # Avvis tydelig irrelevante eller for senior annonser
     if excluded_hits:
         passes = False
 
-    score = (
-        len(matched_include_all) * 3
-        + len(matched_include_any) * 2
-        + len(matched_education_any)
-        - len(excluded_hits) * 5
-    )
+    if any(term in normalized_title for term in senior_title_terms):
+        passes = False
+
+    # Ranger i nivåer
+    if score >= 12 and role_hit_count >= 2:
+        tier = "Sterk match"
+    elif score >= 6 and role_hit_count >= 1:
+        tier = "Mulig match"
+    else:
+        tier = "Svak match"
+
+    # Behold sterke og mulige matcher
+    if tier == "Svak match":
+        passes = False
 
     return passes, MatchResult(
         job_id="",
         title=title,
         url="",
         score=score,
+        tier=tier,
         matched_include_all=matched_include_all,
         matched_include_any=matched_include_any,
         matched_education_any=matched_education_any,
@@ -220,10 +265,11 @@ def write_outputs(
                     f"## {idx}. [{match.title}]({match.url})",
                     "",
                     f"- FINN-ID: `{match.job_id}`",
+                    f"- Rangering: `{match.tier}`",
                     f"- Score: `{match.score}`",
-                    f"- Må-ord funnet: {', '.join(match.matched_include_all) if match.matched_include_all else 'Ingen'}",
-                    f"- Valgfrie trefford funnet: {', '.join(match.matched_include_any) if match.matched_include_any else 'Ingen'}",
+                    f"- Rolleord funnet: {', '.join(match.matched_include_any) if match.matched_include_any else 'Ingen'}",
                     f"- Utdanningsord funnet: {', '.join(match.matched_education_any) if match.matched_education_any else 'Ingen'}",
+                    f"- Ekskluderingsord: {', '.join(match.excluded_hits) if match.excluded_hits else 'Ingen'}",
                     "",
                 ]
             )
