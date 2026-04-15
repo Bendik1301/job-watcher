@@ -1,198 +1,168 @@
 [
   {
-    "job_id": "459861482",
-    "title": "Account Manager · Skjetten · Radio Metro AS | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459861482",
-    "score": 28,
-    "tier": "Sterk match",
-    "matched_include_all": [],
-    "matched_include_any": [
-      "analyse",
-      "utvikling",
-      "kommunikasjon",
-      "innholdsproduksjon",
-      "markedsføring",
-      "account manager",
-      "salg",
-      "kommersiell"
-    ],
-    "matched_education_any": [
-      "bachelor",
-      "kommunikasjon",
-      "markedsføring"
-    ],
-    "excluded_hits": []
-  },
-  {
-    "job_id": "459801307",
-    "title": "Leder Organisasjons- og lederutvikling til Assessit · Oslo · Assessit | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459801307",
-    "score": 27,
+    "job_id": "460022928",
+    "title": "Ressurskoordinator · Oslo · Stenseth & RS Ressurs AS | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/460022928",
+    "score": 26,
     "tier": "Sterk match",
     "matched_include_all": [],
     "matched_include_any": [
       "rådgiver",
       "konsulent",
-      "analyse",
+      "koordinator",
+      "administrasjon",
       "utvikling",
-      "forretningsutvikling",
-      "organisasjonsutvikling",
-      "offentlig sektor",
-      "salg",
-      "kommersiell"
+      "kommunikasjon",
+      "organisasjonsutvikling"
     ],
     "matched_education_any": [
-      "ledelse"
+      "administrasjon",
+      "kommunikasjon"
     ],
     "excluded_hits": []
   },
   {
-    "job_id": "459851312",
-    "title": "Konsulent · Strømmen · Lillestrøm kommune | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459851312",
-    "score": 26,
-    "tier": "Sterk match",
-    "matched_include_all": [],
-    "matched_include_any": [
-      "konsulent",
-      "administrasjon",
-      "kommunikasjon",
-      "formidling"
-    ],
-    "matched_education_any": [
-      "relevant utdanning",
-      "administrasjon",
-      "kommunikasjon",
-      "økonomi"
-    ],
-    "excluded_hits": []
-  },
-  {
-    "job_id": "459845249",
-    "title": "Kommunikasjonsrådgiver · Oslo · Sparebankstiftelsen DNB | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459845249",
+    "job_id": "459989901",
+    "title": "Kommunikasjonssjef · Skedsmokorset · Onninen AS | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459989901",
     "score": 24,
     "tier": "Sterk match",
     "matched_include_all": [],
     "matched_include_any": [
       "rådgiver",
       "utvikling",
+      "innovasjon",
       "kommunikasjon",
-      "innholdsproduksjon",
-      "forvaltning",
-      "salg"
-    ],
-    "matched_education_any": [
-      "bachelor",
-      "kommunikasjon"
-    ],
-    "excluded_hits": []
-  },
-  {
-    "job_id": "459878401",
-    "title": "Stabssjef · Oslo · Norsk Folkehjelp | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459878401",
-    "score": 20,
-    "tier": "Sterk match",
-    "matched_include_all": [],
-    "matched_include_any": [
-      "rådgiver",
-      "administrasjon",
-      "utvikling",
-      "kommunikasjon"
+      "formidling",
+      "forvaltning"
     ],
     "matched_education_any": [
       "høyere utdanning",
-      "administrasjon",
       "ledelse",
       "kommunikasjon"
     ],
     "excluded_hits": []
   },
   {
-    "job_id": "459859603",
-    "title": "Account Manager – Ny salg · Oslo · SD Worx Norge | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459859603",
-    "score": 19,
+    "job_id": "459990124",
+    "title": "Talent Manager · Oslo · Netlight AS | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459990124",
+    "score": 23,
     "tier": "Sterk match",
     "matched_include_all": [],
     "matched_include_any": [
       "konsulent",
       "utvikling",
-      "innovasjon",
-      "account manager",
+      "organisasjonsutvikling",
       "salg"
-    ],
-    "matched_education_any": [],
-    "excluded_hits": []
-  },
-  {
-    "job_id": "459773167",
-    "title": "Leder Trebygg, Oslo · Oslo · Sweco Norge | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459773167",
-    "score": 15,
-    "tier": "Sterk match",
-    "matched_include_all": [],
-    "matched_include_any": [
-      "rådgiver",
-      "konsulent",
-      "utvikling"
     ],
     "matched_education_any": [
       "bachelor",
-      "master"
+      "master",
+      "universitet",
+      "ledelse"
     ],
     "excluded_hits": []
   },
   {
-    "job_id": "459876119",
-    "title": "Politioverbetjent/politikontakt · Oslo · Oslo politidistrikt | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459876119",
-    "score": 15,
-    "tier": "Sterk match",
-    "matched_include_all": [],
-    "matched_include_any": [
-      "utvikling",
-      "kommunikasjon",
-      "formidling"
-    ],
-    "matched_education_any": [
-      "relevant utdanning",
-      "ledelse",
-      "kommunikasjon"
-    ],
-    "excluded_hits": []
-  },
-  {
-    "job_id": "459862208",
-    "title": "Rådgiver bruinspeksjon/gruppeleder, Oslo · Oslo · Sweco Norge | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459862208",
+    "job_id": "460008598",
+    "title": "Møtebooker · Oslo · Scalers | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/460008598",
     "score": 14,
     "tier": "Sterk match",
     "matched_include_all": [],
     "matched_include_any": [
       "rådgiver",
       "konsulent",
-      "prosjektleder",
-      "utvikling"
+      "kommunikasjon",
+      "salg"
     ],
-    "matched_education_any": [],
+    "matched_education_any": [
+      "kommunikasjon"
+    ],
     "excluded_hits": []
   },
   {
-    "job_id": "459823422",
-    "title": "Information Manager · Kjeller · Forsvaret | FINN Jobb",
-    "url": "https://www.finn.no/job/ad/459823422",
+    "job_id": "459986604",
+    "title": "B2B-selger · Oslo · Robin & Gule Sider | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459986604",
+    "score": 13,
+    "tier": "Sterk match",
+    "matched_include_all": [],
+    "matched_include_any": [
+      "analyse",
+      "utvikling",
+      "markedsføring",
+      "customer success",
+      "salg"
+    ],
+    "matched_education_any": [
+      "markedsføring"
+    ],
+    "excluded_hits": []
+  },
+  {
+    "job_id": "459910143",
+    "title": "Fundraisere i Akershus · Lillestrøm · Norges Blindeforbund | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459910143",
     "score": 12,
     "tier": "Sterk match",
     "matched_include_all": [],
     "matched_include_any": [
       "utvikling",
-      "kommunikasjon",
-      "forvaltning"
+      "markedsføring",
+      "salg"
     ],
     "matched_education_any": [
-      "høyere utdanning",
+      "master",
+      "markedsføring"
+    ],
+    "excluded_hits": []
+  },
+  {
+    "job_id": "460003505",
+    "title": "Kundeservicemedarbeider · Oslo · Daglig drift | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/460003505",
+    "score": 10,
+    "tier": "Mulig match",
+    "matched_include_all": [],
+    "matched_include_any": [
+      "koordinator",
+      "administrasjon"
+    ],
+    "matched_education_any": [
+      "administrasjon"
+    ],
+    "excluded_hits": []
+  },
+  {
+    "job_id": "459349168",
+    "title": "Distriktssjef - Oslo · Oslo · Aneta Lighting AS | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459349168",
+    "score": 8,
+    "tier": "Mulig match",
+    "matched_include_all": [],
+    "matched_include_any": [
+      "analyse",
+      "utvikling",
+      "salg",
+      "kommersiell"
+    ],
+    "matched_education_any": [],
+    "excluded_hits": []
+  },
+  {
+    "job_id": "459900386",
+    "title": "Assistance Coordinator · Lysaker · SOS International | FINN Jobb",
+    "url": "https://www.finn.no/job/ad/459900386",
+    "score": 7,
+    "tier": "Mulig match",
+    "matched_include_all": [],
+    "matched_include_any": [
+      "saksbehandler",
+      "kommunikasjon"
+    ],
+    "matched_education_any": [
       "kommunikasjon"
     ],
     "excluded_hits": []
